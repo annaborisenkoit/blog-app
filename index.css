@@ -1,0 +1,45 @@
+.post-title-input {
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  width: 300px;
+}
+
+.post-text-input {
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  width: 300px;
+}
+
+.new-post-btn {
+  box-sizing: border-box;
+  width: 300px;
+  height: 30px;
+}
+
+.col {
+  width: 400px;
+}
+
+.post__date {
+  color: aqua;
+}
+
+.post__title {
+  font-weight: 700;
+}
+
+.row {
+  display: flex;
+  gap: 30px;
+}
+
+.validationMessage {
+  margin-top: 20px;
+  color: red;
+}
+
+.validationMessage_hidden {
+  display: none;
+}
