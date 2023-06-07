@@ -6,35 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>blog app</title>
 
+    <link rel="stylesheet" href="reset.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>Приложение блог</h1>
-
-    <div class="row">
-      <div class="col">
-        <h2>Новый пост</h2>
-        <input
-          class="js-post-title-input post-title-input"
-          placeholder="Заголовок"
-          type="text"
-        />
-        <textarea
-          class="js-post-text-input post-text-input"
-          placeholder="Текст"
-          type="text"
-        ></textarea>
-        <button class="js-new-post-btn new-post-btn">Опубликовать</button>
-
-        <div
-          id="validationMessage"
-          class="validationMessage validationMessage_hidden"
-        ></div>
-      </div>
-      <div class="col">
-        <h2>Лента</h2>
-
-        <div class="js-posts posts">Лента пуста...</div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h2>Новый пост</h2>
+          <input
+            class="js-post-title-input post-title-input"
+            placeholder="Заголовок"
+            type="text"
+          />
+          <textarea
+            class="js-post-text-input post-text-input"
+            placeholder="Напиши пост"
+            type="text"
+          ></textarea>
+          <button class="js-new-post-btn new-post-btn">Опубликовать</button>
+          <div
+            id="validationMessage"
+            class="validationMessage validationMessage_hidden"
+          ></div>
+        </div>
+        <div class="col">
+          <h2>Лента</h2>
+          <div class="js-posts posts">Лента пуста...</div>
+        </div>
       </div>
     </div>
 

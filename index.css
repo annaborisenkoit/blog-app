@@ -1,38 +1,102 @@
-.post-title-input {
-  display: block;
-  box-sizing: border-box;
-  margin-bottom: 20px;
-  width: 300px;
+html {
+  scroll-behavior: smooth;
 }
 
-.post-text-input {
-  display: block;
-  box-sizing: border-box;
-  margin-bottom: 20px;
-  width: 300px;
+body {
+  font-family: 'Inter', sans-serif;
+  width: 100%;
 }
 
-.new-post-btn {
-  box-sizing: border-box;
-  width: 300px;
-  height: 30px;
-}
-
-.col {
-  width: 400px;
-}
-
-.post__date {
-  color: aqua;
-}
-
-.post__title {
-  font-weight: 700;
+.container {
+  margin: 0 auto;
+  width: 1150px;
+  padding-top: 102px;
 }
 
 .row {
   display: flex;
-  gap: 30px;
+  gap: 100px;
+}
+
+h2 {
+  margin-bottom: 60px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  color: #000000;
+}
+
+.post-title-input {
+  padding: 20px;
+  margin-bottom: 30px;
+  width: 500px;
+  height: 60px;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 39px;
+  color: black;
+  border-radius: 5px;
+
+  border: 1px solid #000000;
+}
+
+.post-text-input {
+  padding: 20px;
+  margin-bottom: 30px;
+  width: 500px;
+  height: 250px;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 39px;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+
+.new-post-btn {
+  width: 500px;
+  height: 60px;
+  background-color: #0094ff;
+  border-radius: 5px;
+  border: none;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 39px;
+  color: #ffffff;
+}
+
+.col {
+  width: 500px;
+}
+
+.post__date {
+  margin-bottom: 15px;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  color: #0094ff;
+}
+
+.post__title {
+  margin-bottom: 15px;
+  width: 500px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  color: #000000;
+}
+.post__text {
+  margin-bottom: 50px;
+  width: 500px;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  color: #000000;
+}
+
+.posts {
+  width: 500px;
+  word-wrap: break-word;
 }
 
 .validationMessage {
@@ -46,4 +110,32 @@
 
 .btn-disabled {
   opacity: 50%;
+}
+
+@media (max-width: 1199px) {
+  .container {
+    width: 100%;
+    padding-left: 12px;
+    padding-top: 80px;
+    padding-right: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .row {
+    flex-direction: column;
+    /* width: 300px; */
+  }
+
+  .post-title-input {
+    /* width: 300px; */
+  }
+
+  .post-text-input {
+    /* width: 300px; */
+  }
+
+  .new-post-btn {
+    /* width: 300px; */
+  }
 }

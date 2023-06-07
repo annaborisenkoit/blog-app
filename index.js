@@ -52,7 +52,7 @@ function getPostFromUser() {
   const time = new Date().toLocaleTimeString([], options);
 
   if (!title || !text) {
-    return false;
+    return;
   }
 
   return {
