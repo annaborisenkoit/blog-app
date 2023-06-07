@@ -43,3 +43,7 @@
 .validationMessage_hidden {
   display: none;
 }
+
+.btn-disabled {
+  opacity: 50%;
+}
