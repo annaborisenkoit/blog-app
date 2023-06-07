@@ -119,6 +119,15 @@ h2 {
     padding-top: 80px;
     padding-right: 12px;
   }
+
+  .col {
+    width: 100%;
+  }
+
+  h2 {
+    width: 100%;
+    display: inline-block;
+  }
 }
 
 @media (max-width: 767px) {
