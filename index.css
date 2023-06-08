@@ -113,7 +113,8 @@ h2 {
 }
 
 .btn-disabled {
-  opacity: 50%;
+  //opacity: 50%;
+  background-color: gray;
 }
 
 @media (max-width: 1199px) {

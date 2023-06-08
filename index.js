@@ -6,27 +6,30 @@ const TEXT_VALIDATION_LIMIT = 20;
 const postTitleInputNode = document.querySelector('.js-post-title-input');
 const postTextInputNode = document.querySelector('.js-post-text-input');
 const newPostBtnNode = document.querySelector('.js-new-post-btn');
-const publishButtonDisabled = document.querySelector('js-button-disabled');
 const postsNode = document.querySelector('.js-posts');
-const validationMessage = document.getElementById('validationMessage');
+const validationMessage = document.querySelector('.js-validationMessage');
 
 newPostBtnNode.addEventListener('click', function () {
-  //получить данные из поля ввода
-  const postFromUser = getPostFromUser();
+  //получит данные из поля ввода
 
-  //сохранить пост (в данном случае заголовок поста) - присвой значение, которое ввел пользователь
-  addPost(postFromUser);
-  //этот метод в массив добавит новый пост
-  //отобразить пост
+  const postFromUser = getPostFromUser(); // присвоит значение, которое ввел пользователь
 
-  renderPosts();
+  addPost(postFromUser); //этот метод добавит новый пост в массив (но еще не отобразит на странице)
 
-  clearInput();
+  renderPosts(); //отобразить пост на странице
+
+  clearInput(); //очистить инпуты
 });
 
-postTitleInputNode.addEventListener('input', validation);
+postTitleInputNode.addEventListener('input', function () {
+  validation();
+  validationDisabledButton();
+});
 
-postTextInputNode.addEventListener('input', validation);
+postTextInputNode.addEventListener('input', function () {
+  validation();
+  validationDisabledButton();
+});
 
 function validation() {
   const titlelen = postTitleInputNode.value.length;
@@ -44,6 +47,19 @@ function validation() {
     return;
   }
   validationMessage.classList.add('validationMessage_hidden');
+}
+
+function validationDisabledButton() {
+  if (
+    postTitleInputNode.value.length > TITLE_VALIDATION_LIMIT ||
+    postTextInputNode.value.length > TEXT_VALIDATION_LIMIT
+  ) {
+    newPostBtnNode.setAttribute('disabled', 'disabled');
+    newPostBtnNode.classList.add('btn-disabled');
+  } else {
+    newPostBtnNode.removeAttribute('disabled');
+    newPostBtnNode.classList.remove('btn-disabled');
+  }
 }
 
 function getPostFromUser() {
