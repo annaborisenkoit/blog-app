@@ -7,6 +7,8 @@ const postTitleInputNode = document.querySelector('.js-post-title-input');
 const postTextInputNode = document.querySelector('.js-post-text-input');
 const newPostBtnNode = document.querySelector('.js-new-post-btn');
 const postsNode = document.querySelector('.js-posts');
+const outputTitle = document.querySelector('.js-output-title');
+const outputText = document.querySelector('.js-output-text');
 const validationMessage = document.querySelector('.js-validationMessage');
 
 newPostBtnNode.addEventListener('click', function () {
@@ -16,9 +18,9 @@ newPostBtnNode.addEventListener('click', function () {
 
   addPost(postFromUser); //этот метод добавит новый пост в массив (но еще не отобразит на странице)
 
-  renderPosts(); //отобразить пост на странице
+  renderPosts(); //отобразит пост на странице
 
-  clearInput(); //очистить инпуты
+  clearInput(); //очистит инпуты
 });
 
 postTitleInputNode.addEventListener('input', function () {
@@ -36,17 +38,20 @@ function validation() {
   const textlen = postTextInputNode.value.length;
 
   if (titlelen > TITLE_VALIDATION_LIMIT) {
-    validationMessage.innerText = `Длина заголовка не должна превышать ${TITLE_VALIDATION_LIMIT} символов!`;
-    validationMessage.classList.remove('validationMessage_hidden');
+    outputTitle.innerText = `Длина заголовка не должна превышать ${TITLE_VALIDATION_LIMIT} символов`;
+    outputTitle.classList.remove('output-title_hidden');
     return;
+  } else {
+    outputTitle.classList.add('output-title_hidden');
   }
 
   if (textlen > TEXT_VALIDATION_LIMIT) {
-    validationMessage.innerText = `Длина текста не должна превышать ${TEXT_VALIDATION_LIMIT} символов!`;
-    validationMessage.classList.remove('validationMessage_hidden');
+    outputText.innerText = `Длина текста не должна превышать ${TEXT_VALIDATION_LIMIT} символов`;
+    outputText.classList.remove('output-text_hidden');
     return;
+  } else {
+    outputText.classList.add('output-text_hidden');
   }
-  validationMessage.classList.add('validationMessage_hidden');
 }
 
 function validationDisabledButton() {

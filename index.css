@@ -44,6 +44,7 @@ h2 {
 .post-text-input {
   padding: 20px;
   margin-bottom: 30px;
+  margin-top: 30px;
   width: 100%;
   height: 250px;
   font-weight: 400;
@@ -100,7 +101,8 @@ h2 {
   word-wrap: break-word;
 }
 
-.validationMessage {
+.output-title,
+.output-text {
   margin-top: 20px;
   font-size: 25px;
   line-height: 30px;
@@ -108,12 +110,13 @@ h2 {
   color: #ff0000;
 }
 
-.validationMessage_hidden {
+.output-title_hidden,
+.output-text_hidden {
   display: none;
 }
 
 .btn-disabled {
-  //opacity: 50%;
+  opacity: 50%;
   background-color: gray;
 }
 
