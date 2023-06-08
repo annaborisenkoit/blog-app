@@ -20,7 +20,7 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col">
+        <div class="col js-button-disabled">
           <h2>Новый пост</h2>
           <input
             class="js-post-title-input post-title-input"
@@ -32,7 +32,13 @@
             placeholder="Напиши пост"
             type="text"
           ></textarea>
-          <button class="js-new-post-btn new-post-btn">Опубликовать</button>
+          <button
+            class="js-new-post-btn new-post-btn"
+            <!--disabled="disabled"
+            --
+          >
+            Опубликовать
+          </button>
           <div
             id="validationMessage"
             class="validationMessage validationMessage_hidden"

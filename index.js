@@ -6,6 +6,7 @@ const TEXT_VALIDATION_LIMIT = 20;
 const postTitleInputNode = document.querySelector('.js-post-title-input');
 const postTextInputNode = document.querySelector('.js-post-text-input');
 const newPostBtnNode = document.querySelector('.js-new-post-btn');
+const publishButtonDisabled = document.querySelector('js-button-disabled');
 const postsNode = document.querySelector('.js-posts');
 const validationMessage = document.getElementById('validationMessage');
 
@@ -19,6 +20,8 @@ newPostBtnNode.addEventListener('click', function () {
   //отобразить пост
 
   renderPosts();
+
+  clearInput();
 });
 
 postTitleInputNode.addEventListener('input', validation);
@@ -96,4 +99,9 @@ function renderPosts() {
 
   postsNode.innerHTML = postsHTML;
   //вставляем этот HTML в Ленту posts
+}
+
+function clearInput() {
+  postTitleInputNode.value = '';
+  postTextInputNode.value = '';
 }
